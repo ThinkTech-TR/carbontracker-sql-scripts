@@ -46,6 +46,18 @@ select * from carbon.journey;
 insert into car_carbon (car_type, kg_carbon_per_mile)
 values ('smallPetrolDiesel', 0.23254);
 
+insert into car_carbon (car_type, kg_carbon_per_mile)
+values ('mediumPetrolDiesel', 0.28276);
+
+insert into car_carbon (car_type, kg_carbon_per_mile)
+values ('largePetrolDiesel', 0.35923);
+
+insert into car_carbon (car_type, kg_carbon_per_mile)
+values ('plugInHybrid', 0.15284);
+
+insert into car_carbon (car_type, kg_carbon_per_mile)
+values ('electric', 0.08487);
+
 select * from carbon.car_carbon;
 
 
