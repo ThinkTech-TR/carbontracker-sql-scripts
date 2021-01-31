@@ -2,6 +2,7 @@
 use carbon;
 
 drop table car_carbon;
+drop table housing;
 drop table journey;
 drop table questionaire;
 drop table transport;
@@ -26,6 +27,14 @@ car_type nvarchar(50) not null,
 kg_carbon_per_mile decimal(8, 6) not null,
 primary key(car_carbon_id),
 UNIQUE KEY idx_car_carbon_car_type (car_type));
+
+create table if not exists housing (
+housing_id int not null auto_increment,
+housing_age nvarchar(50) not null,
+housing_type nvarchar(50) not null,
+kg_carbon_annual decimal(8, 2) not null,
+primary key(housing_id),
+UNIQUE KEY idx_housing_housing (housing_age, housing_type));
 
 CREATE table if not exists questionaire (
 questionaire_id int not null auto_increment,
