@@ -206,8 +206,7 @@ insert into housing (housing_age, housing_type, kg_carbon_annual)
 insert into housing (housing_age, housing_type, kg_carbon_annual)
  values ('post1999', 'purposeBuiltFlat', 1951.06);
 
- 
-select * from carbon.housing
+ select * from carbon.housing
 
 
 
