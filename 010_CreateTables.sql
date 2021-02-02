@@ -27,7 +27,6 @@ car_type nvarchar(50) not null,
 kg_carbon_per_mile decimal(8, 6) not null,
 primary key(car_carbon_id),
 UNIQUE KEY idx_car_carbon_car_type (car_type));
-
 create table if not exists housing (
 housing_id int not null auto_increment,
 housing_age nvarchar(50) not null,
@@ -47,8 +46,7 @@ numberInHousehold int,
 houseType nvarchar(50) not null,
 houseAge nvarchar(50) not null,
 primary key(questionaire_id),
-foreign key (user_id) references users(user_id),
-foreign key (carUsage) references car_carbon(car_type));
+foreign key (user_id) references users(user_id));
 
 create table if not exists journey (
 journey_id int not null auto_increment,
