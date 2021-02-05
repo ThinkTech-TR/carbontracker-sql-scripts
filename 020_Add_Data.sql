@@ -220,6 +220,18 @@ INSERT INTO `carbon`.`diet_carbon` (`diet_type`, `kg_carbon_annual`)
     
 INSERT INTO `carbon`.`diet_carbon` (`diet_type`, `kg_carbon_annual`)
 	VALUES ("vegan", 1500); 
+
+UPDATE `carbon`.`transport`
+	SET `kg_carbon_per_mile` = 0.081415
+	WHERE `transport_id` = 2;
+
+UPDATE `carbon`.`transport`
+	SET `kg_carbon_per_mile` = 0.024603
+	WHERE `transport_id` = 3;
+
+UPDATE `carbon`.`transport`
+	SET `kg_carbon_per_mile` = 0.274767
+	WHERE `transport_id` = 4;
     
  select * from carbon.housing
 

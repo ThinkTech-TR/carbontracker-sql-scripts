@@ -74,4 +74,5 @@ inner join  transport c on a.transport_id = c.transport_id;
   unique key idx_diet_carbon_diet_type (diet_type)
 );
 
+ALTER TABLE carbon.transport ADD kg_carbon_per_mile decimal(8,6) NOT NULL AFTER transport_type;
 
