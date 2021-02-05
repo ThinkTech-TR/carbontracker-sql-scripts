@@ -206,6 +206,21 @@ insert into housing (housing_age, housing_type, kg_carbon_annual)
 insert into housing (housing_age, housing_type, kg_carbon_annual)
  values ('post1999', 'purposeBuiltFlat', 1951.06);
 
+INSERT INTO `carbon`.`diet_carbon` (`diet_type`, `kg_carbon_annual`)
+	VALUES ("frequent_meat_eater", 3300);
+
+INSERT INTO `carbon`.`diet_carbon` (`diet_type`, `kg_carbon_annual`)
+	VALUES ("meat_eater", 2500);
+    
+INSERT INTO `carbon`.`diet_carbon` (`diet_type`, `kg_carbon_annual`)
+	VALUES ("pescatarian", 1900);
+    
+INSERT INTO `carbon`.`diet_carbon` (`diet_type`, `kg_carbon_annual`)
+	VALUES ("vegetarian", 1700);
+    
+INSERT INTO `carbon`.`diet_carbon` (`diet_type`, `kg_carbon_annual`)
+	VALUES ("vegan", 1500); 
+    
  select * from carbon.housing
 
 

@@ -7,6 +7,7 @@ drop table journey;
 drop table questionaire;
 drop table transport;
 drop table users;
+drop table diet_carbon;
 
 CREATE TABLE IF NOT exists users (
   user_id int NOT NULL AUTO_INCREMENT,
@@ -65,7 +66,12 @@ select a.journey_id, a.user_id, b.auth_user_id, a.transport_id, c.transport_type
 from journey a inner join users b on a.user_id = b.user_id
 inner join  transport c on a.transport_id = c.transport_id;
 
-
-
+ create table if not exists diet_carbon (
+  diet_carbon_id int not null auto_increment,
+  diet_type nvarchar(50) not null,
+  kg_carbon_annual int not null,
+  primary key (diet_carbon_id),
+  unique key idx_diet_carbon_diet_type (diet_type)
+);
 
 
