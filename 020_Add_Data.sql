@@ -207,10 +207,10 @@ insert into housing (housing_age, housing_type, kg_carbon_annual)
  values ('post1999', 'purposeBuiltFlat', 1951.06);
 
 INSERT INTO `carbon`.`diet_carbon` (`diet_type`, `kg_carbon_annual`)
-	VALUES ("frequent_meat_eater", 3300);
+	VALUES ("frequentMeatEater", 3300);
 
 INSERT INTO `carbon`.`diet_carbon` (`diet_type`, `kg_carbon_annual`)
-	VALUES ("meat_eater", 2500);
+	VALUES ("meatEater", 2500);
     
 INSERT INTO `carbon`.`diet_carbon` (`diet_type`, `kg_carbon_annual`)
 	VALUES ("pescatarian", 1900);
