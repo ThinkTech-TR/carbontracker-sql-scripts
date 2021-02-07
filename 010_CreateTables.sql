@@ -7,9 +7,10 @@ drop table questionaire;
 drop table transport;
 drop table users;
 
-CREATE TABLE IF NOT exists users (
+CREATE TABLE IF NOT exists  (
   user_id int NOT NULL AUTO_INCREMENT,
   auth_user_id nvarchar(255) NOT NULL,
+  nickname nvarchar(255) NOT NULL,
   PRIMARY KEY (user_id),
   UNIQUE KEY idx_users_auth_user_id (`auth_user_id`)
 );
@@ -57,7 +58,6 @@ create view vw_journey as
 select a.journey_id, a.user_id, b.auth_user_id, a.transport_id, c.transport_type, a.journey_date, a.distance_miles 
 from journey a inner join users b on a.user_id = b.user_id
 inner join  transport c on a.transport_id = c.transport_id;
-
 
 
 
