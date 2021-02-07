@@ -233,6 +233,10 @@ UPDATE `carbon`.`transport`
 	SET `kg_carbon_per_mile` = 0.274767
 	WHERE `transport_id` = 4;
     
+UPDATE `carbon`.`transport`
+	SET `kg_carbon_per_mile` = 0.222448    
+	WHERE `transport_id` = 1;
+    
  select * from carbon.housing
 
 
