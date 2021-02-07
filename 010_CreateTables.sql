@@ -2,10 +2,12 @@
 use carbon;
 
 drop table car_carbon;
+drop table housing;
 drop table journey;
 drop table questionaire;
 drop table transport;
 drop table users;
+drop table diet_carbon;
 
 CREATE TABLE IF NOT exists  (
   user_id int NOT NULL AUTO_INCREMENT,
@@ -27,6 +29,13 @@ car_type nvarchar(50) not null,
 kg_carbon_per_mile decimal(8, 6) not null,
 primary key(car_carbon_id),
 UNIQUE KEY idx_car_carbon_car_type (car_type));
+create table if not exists housing (
+housing_id int not null auto_increment,
+housing_age nvarchar(50) not null,
+housing_type nvarchar(50) not null,
+kg_carbon_annual decimal(8, 2) not null,
+primary key(housing_id),
+UNIQUE KEY idx_housing_housing (housing_age, housing_type));
 
 CREATE table if not exists questionaire (
 questionaire_id int not null auto_increment,
@@ -39,8 +48,7 @@ numberInHousehold int,
 houseType nvarchar(50) not null,
 houseAge nvarchar(50) not null,
 primary key(questionaire_id),
-foreign key (user_id) references users(user_id),
-foreign key (carUsage) references car_carbon(car_type));
+foreign key (user_id) references users(user_id));
 
 create table if not exists journey (
 journey_id int not null auto_increment,
@@ -59,6 +67,13 @@ select a.journey_id, a.user_id, b.auth_user_id, a.transport_id, c.transport_type
 from journey a inner join users b on a.user_id = b.user_id
 inner join  transport c on a.transport_id = c.transport_id;
 
+ create table if not exists diet_carbon (
+  diet_carbon_id int not null auto_increment,
+  diet_type nvarchar(50) not null,
+  kg_carbon_annual int not null,
+  primary key (diet_carbon_id),
+  unique key idx_diet_carbon_diet_type (diet_type)
+);
 
-
+ALTER TABLE carbon.transport ADD kg_carbon_per_mile decimal(8,6) NOT NULL AFTER transport_type;
 
